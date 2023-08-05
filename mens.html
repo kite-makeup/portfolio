@@ -1,0 +1,147 @@
+<html>
+
+<head>
+    <title>Kite Makeup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400&display=swap" rel="stylesheet">
+</head>
+<script>
+    const images = {
+        Mens: [
+            [1, 2],
+            [3],
+            [4, 5],
+        ]
+    }
+</script>
+
+<body>
+    <div class="header">
+        <div style="flex:1" onclick="document.body.scrollTop=0">Kite Chuang</div>
+        <div><a href="#Mens">Fashion</a></div>
+        <div><a href="#contact">Contact</a></div>
+    </div>
+    <div class="content" id="content"></div>
+    <div id="contact">
+        <div style="display:flex;gap:10%">
+            <div>
+                <img src="kite.jpeg" style="height:20vw;width:20vw" />
+            </div>
+            <div style="text-align:left;">
+                <a href="https://www.instagram.com/kite_makeup/">@kite_makeup</a>
+                <p>kiteluck@gmail.com</p>
+                <p>+44 (0) 7491 313607</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const content = document.getElementById("content")
+    for (const [category, imagelist] of Object.entries(images)) {
+        imagelist.forEach(images => {
+            const c = document.createElement("div")
+            c.id = category
+            images.forEach(image => {
+                let i = document.createElement('img')
+                i.src = `${category}/${image}.jpg`
+                if (images.length > 1 && category !== 'Beauty') {
+                    i.classList.add('r43')
+                }
+                c.appendChild(i)
+            })
+            content.appendChild(c)
+        });
+    }
+</script>
+<style>
+    html {
+        font-family: 'Cormorant SC', serif;
+        font-size: 1rem;
+        margin: 0;
+        background: black;
+        color: white;
+        text-shadow: 0 0 10px #888;
+        width: 100vw;
+        position: absolute;
+        overflow-x: hidden;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .header {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        top: 0px;
+        left: 0;
+    }
+
+    .header div {
+        padding: 0.7rem 0.8rem;
+        cursor: pointer;
+        margin: auto;
+    }
+
+    .header div:first-child {
+        font-size: 2.8rem;
+        padding-left: 1.2rem;
+    }
+
+    .content {
+        width: 100vw;
+        margin: auto;
+        text-align: center;
+    }
+
+    .content>div {
+        display: flex;
+        justify-content: center;
+        scroll-snap-align: start;
+    }
+
+    #contact {
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        scroll-snap-align: start;
+    }
+
+    #contact div {
+        margin: auto;
+    }
+
+    @media (orientation: landscape) {
+        img {
+            height: 100vh;
+        }
+
+        .r43 {
+            width: 75vh;
+            object-fit: cover;
+        }
+
+        html {
+            scroll-snap-type: y mandatory;
+        }
+    }
+
+    @media (orientation: portrait) {
+        img {
+            width: 100vw;
+        }
+
+        .content>div {
+            flex-direction: column;
+        }
+    }
+</style>
+
+</html>
