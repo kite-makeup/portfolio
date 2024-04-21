@@ -63,7 +63,7 @@
                 let i = document.createElement('img')
                 i.src = `${category}/${image}.jpg`
                 if (images.length > 1) {
-                    i.classList.add('r43')
+                    i.classList.add('portrait')
                 }
                 c.appendChild(i)
             })
@@ -137,11 +137,12 @@
     @media (orientation: landscape) {
         img {
             height: 100vh;
+            width: 150vh;
+            object-fit: cover;
         }
 
-        .r43 {
+        .portrait {
             width: 75vh;
-            object-fit: cover;
         }
 
         html {
