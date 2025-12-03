@@ -86,9 +86,7 @@
             images.forEach(image => {
                 let i = document.createElement('img')
                 i.src = `${category}/${image}.jpg`
-                if (images.length > 1) {
-                    i.classList.add('portrait')
-                }
+                i.classList.add('portrait')
                 c.appendChild(i)
             })
             content.appendChild(c)
@@ -186,5 +184,6 @@
 </style>
 
 </html>
+
 
 
