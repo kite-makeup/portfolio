@@ -1,0 +1,86 @@
+html {
+    font-family: 'Cormorant SC', serif;
+    font-size: 1rem;
+    margin: 0;
+    background: black;
+    color: white;
+    text-shadow: 0 0 10px #888;
+    width: 100vw;
+    position: absolute;
+    overflow-x: hidden;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0px;
+    left: 0;
+}
+
+.header div {
+    padding: 0.7rem 0.8rem;
+    cursor: pointer;
+    margin: auto;
+}
+
+.header div:first-child {
+    font-size: 2.8rem;
+    padding-left: 1.2rem;
+}
+
+.content {
+    width: 100vw;
+    margin: auto;
+    text-align: center;
+}
+
+.content>div {
+    display: flex;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+
+#contact {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    scroll-snap-align: start;
+}
+
+#contact div {
+    margin: auto;
+}
+
+@media (orientation: landscape) {
+    img {
+        height: 100vh;
+    }
+
+    .r43 {
+        width: 75vh;
+        object-fit: cover;
+    }
+
+    html {
+        scroll-snap-type: y mandatory;
+    }
+}
+
+@media (orientation: portrait) {
+    img {
+        width: 100vw;
+    }
+
+    .content>div {
+        flex-direction: column;
+    }
+}
