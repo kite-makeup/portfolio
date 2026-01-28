@@ -6,9 +6,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="loadimages.js"></script>
 </head>
+
+<body>
+    <div class="header">
+        <div style="flex:1"><a href="index.html">Kite Chuang</a></div>
+        <div><a href="fashion.html">Fashion</a></div>
+        <div><a href="beauty.html">Beauty</a></div>
+        <div><a href="show.html">Show</a></div>
+        <div><a href="contact.html">Contact</a></div>
+    </div>
+    <div class="content" id="content"></div>
+</body>
+
 <script>
-    const imagelist = [
+    loadImages("images", [
         [42],
         [37, 38],
         [39, 40],
@@ -33,47 +46,7 @@
         [33, 303],
         [29, 30],
         [31, 32],
-    ]
-</script>
-
-<body>
-    <div class="header">
-        <div style="flex:1"><a href="index.html">Kite Chuang</a></div>
-        <div><a href="fashion.html">Fashion</a></div>
-        <div><a href="beauty.html">Beauty</a></div>
-        <div><a href="show.html">Show</a></div>
-        <div><a href="contact.html">Contact</a></div>
-    </div>
-    <div class="content" id="content"></div>
-    <div id="contact">
-        <div style="display:flex;gap:10%">
-            <div>
-                <img src="kite.jpeg" style="height:20vw;width:20vw" />
-            </div>
-            <div style="text-align:left;">
-                <a href="https://www.instagram.com/kite_makeup/">@kite_makeup</a>
-                <p>kiteluck@gmail.com</p>
-                <p>+44 (0) 7491 313607</p>
-            </div>
-        </div>
-    </div>
-</body>
-
-<script>
-    const content = document.getElementById("content")
-    imagelist.forEach(images => {
-        const c = document.createElement("div")
-        c.id = category
-        images.forEach(image => {
-            let i = document.createElement('img')
-            i.src = `images/${image}.jpg`
-            if (images.length > 1) {
-                i.classList.add('r43')
-            }
-            c.appendChild(i)
-        })
-        content.appendChild(c)
-    });
+    ])
 </script>
 
 </html>
