@@ -1,4 +1,4 @@
-function loadImages(folder, imageList) {
+function loadImages(folder, imagelist) {
     const content = document.getElementById("content")
     imagelist.forEach(images => {
         const c = document.createElement("div")
